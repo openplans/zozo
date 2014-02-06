@@ -23,7 +23,7 @@ module.exports = (robot) ->
     robot.brain.set 'tellmessagesstorage', JSON.stringify(localstorage)
 
   # Log a message when someone tells you to.
-  robot.respond /tell ([\w.-]*):? (.*)/i, (msg) ->
+  robot.respond /(?:please )?tell ([\w.-]*):? (.*)/i, (msg) ->
     datetime = new Date()
     recipient = msg.match[1]
     room = msg.message.user.room
