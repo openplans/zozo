@@ -60,7 +60,7 @@ module.exports = (robot) ->
             ptime = moment(tellmessage.time).fromNow()
             sender = tellmessage.sender
             text = tellmessage.text
-            fulltext += (ptime + ', ' + sender + ' said: ' + text + '\r\n')
+            fulltext += (username + ': ' + ptime + ', ' + sender + ' said: ' + text + '\r\n')
 
           # Send the messages and clear the recipient's message queue
           delete localstorage[room][recipient]
